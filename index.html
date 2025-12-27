@@ -30,7 +30,7 @@
     />
     <meta
       property="og:image"
-      content="https://via.placeholder.com/1200x630/D32F2F/FFFFFF?text=Hokky+Chinese+Food"
+      content="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=1200&q=80"
     />
 
     <link
@@ -50,6 +50,7 @@
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
       }
 
       .navbar-brand {
@@ -60,7 +61,7 @@
       /* Hero Section */
       .hero-section {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("https://images.unsplash.com/photo-1552611052-33e04de081de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+          url("https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=1920&q=80");
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -94,20 +95,51 @@
         margin-bottom: 1rem;
       }
 
+      /* Menu Card Styling */
       .menu-card {
         border: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         transition: 0.3s;
+        height: 100%;
+        background: white;
       }
 
       .menu-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .menu-card img {
+        height: 250px;
+        object-fit: cover;
+        transition: 0.5s;
+      }
+
+      .menu-card:hover img {
+        transform: scale(1.05);
       }
 
       .menu-price {
         color: var(--primary-red);
         font-weight: bold;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+      }
+
+      /* Testimonial Styling */
+      .testimonial-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border-left: 5px solid var(--primary-red);
+      }
+
+      .stars {
+        color: var(--accent-gold);
+        margin-bottom: 10px;
       }
 
       footer {
@@ -122,7 +154,10 @@
       class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm"
     >
       <div class="container">
-        <a class="navbar-brand" href="#"><i class="bi bi-fire"></i> HOKKY</a>
+        <a class="navbar-brand" href="#"
+          ><i class="bi bi-fire"></i> HOKKY
+          <span class="text-dark small fw-normal">Chinese Food</span></a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -137,10 +172,10 @@
               <a class="nav-link" href="#beranda">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#tentang">Tentang</a>
+              <a class="nav-link" href="#menu">Menu Favorit</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#menu">Menu Favorit</a>
+              <a class="nav-link" href="#testimoni">Testimoni</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#lokasi">Lokasi</a>
@@ -162,57 +197,24 @@
     <section id="beranda" class="hero-section text-center">
       <div class="container">
         <h1 class="display-3 fw-bold mb-3">Hokky Chinese Food & Seafood</h1>
-        <p class="lead mb-4">
-          Nikmati kelezatan masakan otentik dengan bahan seafood segar di
-          jantung kota Tasikmalaya.
+        <p class="lead mb-4 fs-4">
+          Kelezatan masakan otentik dengan seafood segar di jantung Tasikmalaya.
         </p>
         <div class="d-flex justify-content-center gap-3">
-          <a href="#menu" class="btn btn-outline-light btn-lg">Lihat Menu</a>
-          <a href="https://wa.me/6282221010828" class="btn btn-hokky btn-lg"
+          <a href="#menu" class="btn btn-outline-light btn-lg rounded-pill px-4"
+            >Lihat Menu</a
+          >
+          <a
+            href="https://wa.me/6282221010828"
+            class="btn btn-hokky btn-lg rounded-pill px-4"
             ><i class="bi bi-whatsapp"></i> Order Delivery</a
           >
         </div>
         <div class="mt-4">
-          <span class="badge bg-warning text-dark p-2 fs-6"
+          <span
+            class="badge bg-warning text-dark p-2 px-3 fs-6 rounded-pill shadow"
             ><i class="bi bi-star-fill"></i> Rating 4.9/5.0 di Google Maps</span
           >
-        </div>
-      </div>
-    </section>
-
-    <section id="tentang" class="section-padding bg-light">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-4 mb-4">
-            <div class="p-4 bg-white rounded shadow-sm h-100">
-              <i class="bi bi-award feature-icon"></i>
-              <h4>Kualitas Terbaik</h4>
-              <p>
-                Menggunakan bahan seafood segar setiap hari dan bumbu rempah
-                pilihan untuk rasa yang maksimal.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="p-4 bg-white rounded shadow-sm h-100">
-              <i class="bi bi-shop feature-icon"></i>
-              <h4>Tempat Nyaman</h4>
-              <p>
-                Cocok untuk makan tengah bersama keluarga besar atau rekan
-                kerja. Lokasi strategis di Jl. HZ. Mustofa.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="p-4 bg-white rounded shadow-sm h-100">
-              <i class="bi bi-emoji-smile feature-icon"></i>
-              <h4>Layanan Ramah</h4>
-              <p>
-                Pelayanan cepat dan ramah dengan rating kepuasan pelanggan yang
-                sangat tinggi.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -220,109 +222,251 @@
     <section id="menu" class="section-padding">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold">Menu Favorit Pelanggan</h2>
+          <h6 class="text-danger fw-bold text-uppercase ls-2">
+            Pilihan Terbaik
+          </h6>
+          <h2 class="fw-bold display-6">Menu Favorit Pelanggan</h2>
           <p class="text-muted">
-            Pilihan menu yang paling sering dipesan oleh pelanggan setia kami.
+            Hidangan best-seller yang wajib Anda coba saat berkunjung.
           </p>
         </div>
         <div class="row g-4">
           <div class="col-md-4 col-sm-6">
-            <div class="card menu-card h-100">
+            <div class="card menu-card">
               <img
-                src="https://placehold.co/600x400/d32f2f/FFF?text=Mix+Seafood"
+                src="https://images.unsplash.com/photo-1625937751876-4515cd8e7705?auto=format&fit=crop&w=800&q=80"
                 class="card-img-top"
                 alt="Mix Seafood Tasikmalaya"
               />
-              <div class="card-body">
-                <h5 class="card-title">Paket Mix Seafood</h5>
-                <p class="card-text small text-muted">
-                  Kombinasi cumi, udang, kerang dara, kerang hijau, dan
-                  kepiting. Pilihan saus: Padang, Asam Manis, Tiram.
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold">Paket Mix Seafood</h5>
+                <p class="card-text small text-muted flex-grow-1">
+                  Pesta seafood (cumi, udang, kerang, kepiting) dengan pilihan
+                  saus Padang, Tiram, atau Asam Manis. Porsi mantap!
                 </p>
-                <p class="menu-price">Mulai Rp100.000++</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="menu-price">Rp 100.000++</span>
+                  <a
+                    href="https://wa.me/6282221010828?text=Halo%20Hokky,%20saya%20mau%20pesan%20Mix%20Seafood"
+                    class="btn btn-sm btn-outline-danger"
+                    ><i class="bi bi-plus-lg"></i> Pesan</a
+                  >
+                </div>
               </div>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
-            <div class="card menu-card h-100">
+            <div class="card menu-card">
               <img
-                src="https://placehold.co/600x400/d32f2f/FFF?text=Sapo+Tahu"
+                src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc28?auto=format&fit=crop&w=800&q=80"
                 class="card-img-top"
                 alt="Sapo Tahu Seafood"
               />
-              <div class="card-body">
-                <h5 class="card-title">Sapo Tahu Seafood</h5>
-                <p class="card-text small text-muted">
-                  Tahu sutra lembut dimasak dengan sayuran segar dan potongan
-                  seafood dalam kuah kental gurih.
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold">Sapo Tahu Seafood</h5>
+                <p class="card-text small text-muted flex-grow-1">
+                  Tahu sutra jepang yang lembut dimasak claypot dengan sayuran
+                  segar dan seafood. Kuah kental gurihnya juara.
                 </p>
-                <p class="menu-price">Rp 45.000 - Rp 60.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="menu-price">Rp 45.000++</span>
+                  <a
+                    href="https://wa.me/6282221010828?text=Halo%20Hokky,%20saya%20mau%20pesan%20Sapo%20Tahu"
+                    class="btn btn-sm btn-outline-danger"
+                    ><i class="bi bi-plus-lg"></i> Pesan</a
+                  >
+                </div>
               </div>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
-            <div class="card menu-card h-100">
+            <div class="card menu-card">
               <img
-                src="https://placehold.co/600x400/d32f2f/FFF?text=Sapi+Lada+Hitam"
+                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"
                 class="card-img-top"
                 alt="Sapi Lada Hitam"
               />
-              <div class="card-body">
-                <h5 class="card-title">Sapi Lada Hitam</h5>
-                <p class="card-text small text-muted">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title fw-bold">Sapi Lada Hitam</h5>
+                <p class="card-text small text-muted flex-grow-1">
                   Daging sapi pilihan yang empuk ditumis dengan paprika dan saus
-                  lada hitam yang nendang.
+                  lada hitam spesial yang nendang.
                 </p>
-                <p class="menu-price">Rp 50.000 - Rp 70.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3"
+                >
+                  <span class="menu-price">Rp 50.000++</span>
+                  <a
+                    href="https://wa.me/6282221010828?text=Halo%20Hokky,%20saya%20mau%20pesan%20Sapi%20Lada%20Hitam"
+                    class="btn btn-sm btn-outline-danger"
+                    ><i class="bi bi-plus-lg"></i> Pesan</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="text-center mt-5">
-          <a href="https://wa.me/6282221010828" class="btn btn-outline-danger"
+          <a
+            href="https://wa.me/6282221010828"
+            class="btn btn-outline-danger rounded-pill px-4"
             >Lihat Menu Lengkap via WhatsApp</a
           >
         </div>
       </div>
     </section>
 
-    <section id="lokasi" class="section-padding bg-light">
+    <section id="testimoni" class="section-padding bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h6 class="text-danger fw-bold text-uppercase ls-2">
+            Review Google Maps
+          </h6>
+          <h2 class="fw-bold display-6">Apa Kata Mereka?</h2>
+          <p class="text-muted">
+            Berdasarkan ulasan pelanggan asli di Google Maps (Rating 4.9)
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="fst-italic text-muted">
+                "Makanannya enak, porsi banyak, harga standar. Sangat
+                rekomendasi buat makan bareng keluarga besar di Tasik."
+              </p>
+              <div class="d-flex align-items-center mt-4">
+                <div
+                  class="bg-secondary rounded-circle d-flex justify-content-center align-items-center text-white fw-bold"
+                  style="width: 40px; height: 40px"
+                >
+                  R
+                </div>
+                <div class="ms-3">
+                  <h6 class="mb-0 fw-bold">Rudi Hermawan</h6>
+                  <small class="text-muted">Local Guide</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="fst-italic text-muted">
+                "Seafoodnya fresh banget! Saus padangnya pedasnya pas dan
+                nendang. Sapo tahunya juga juara, anak-anak suka."
+              </p>
+              <div class="d-flex align-items-center mt-4">
+                <div
+                  class="bg-secondary rounded-circle d-flex justify-content-center align-items-center text-white fw-bold"
+                  style="width: 40px; height: 40px"
+                >
+                  S
+                </div>
+                <div class="ms-3">
+                  <h6 class="mb-0 fw-bold">Siti Aminah</h6>
+                  <small class="text-muted">Pelanggan Setia</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="fst-italic text-muted">
+                "Pelayanan ramah dan cepat meskipun sedang ramai. Salah satu
+                Chinese food halal terbaik di Tasikmalaya."
+              </p>
+              <div class="d-flex align-items-center mt-4">
+                <div
+                  class="bg-secondary rounded-circle d-flex justify-content-center align-items-center text-white fw-bold"
+                  style="width: 40px; height: 40px"
+                >
+                  A
+                </div>
+                <div class="ms-3">
+                  <h6 class="mb-0 fw-bold">Agus Setiawan</h6>
+                  <small class="text-muted">Local Guide</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokasi" class="section-padding">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <h2 class="fw-bold mb-4">Kunjungi Kami</h2>
-            <ul class="list-unstyled">
-              <li class="mb-3 d-flex">
-                <i class="bi bi-geo-alt-fill text-danger me-3 fs-5"></i>
-                <div>
-                  <strong>Alamat:</strong><br />
-                  Jl. HZ. Mustofa No.351, Tugujaya,<br />
-                  Kec. Cihideung, Kab. Tasikmalaya,<br />
-                  Jawa Barat 46126
-                </div>
-              </li>
-              <li class="mb-3 d-flex">
-                <i class="bi bi-clock-fill text-danger me-3 fs-5"></i>
-                <div>
-                  <strong>Jam Buka:</strong><br />
-                  Senin - Minggu: 10.00 – 22.00 WIB
-                </div>
-              </li>
-              <li class="mb-3 d-flex">
-                <i class="bi bi-telephone-fill text-danger me-3 fs-5"></i>
-                <div>
-                  <strong>Telepon / WA:</strong><br />
-                  <a
-                    href="https://wa.me/6282221010828"
-                    class="text-decoration-none text-dark"
-                    >+62 822-2101-0828</a
-                  >
-                </div>
-              </li>
-            </ul>
+          <div class="col-lg-5 mb-4 mb-lg-0">
+            <div class="bg-white p-4 rounded shadow-sm border">
+              <h3 class="fw-bold mb-4">Kunjungi Kami</h3>
+              <ul class="list-unstyled">
+                <li class="mb-4 d-flex">
+                  <div class="me-3">
+                    <span class="bg-light text-danger p-2 rounded-circle"
+                      ><i class="bi bi-geo-alt-fill fs-5"></i
+                    ></span>
+                  </div>
+                  <div>
+                    <strong class="d-block mb-1">Alamat</strong>
+                    <span class="text-muted"
+                      >Jl. HZ. Mustofa No.351, Tugujaya, Kec. Cihideung,
+                      Tasikmalaya</span
+                    >
+                  </div>
+                </li>
+                <li class="mb-4 d-flex">
+                  <div class="me-3">
+                    <span class="bg-light text-danger p-2 rounded-circle"
+                      ><i class="bi bi-clock-fill fs-5"></i
+                    ></span>
+                  </div>
+                  <div>
+                    <strong class="d-block mb-1">Jam Operasional</strong>
+                    <span class="text-muted"
+                      >Setiap Hari: 10.00 – 22.00 WIB</span
+                    >
+                  </div>
+                </li>
+                <li class="d-flex">
+                  <div class="me-3">
+                    <span class="bg-light text-danger p-2 rounded-circle"
+                      ><i class="bi bi-telephone-fill fs-5"></i
+                    ></span>
+                  </div>
+                  <div>
+                    <strong class="d-block mb-1">Reservasi / Info</strong>
+                    <a
+                      href="https://wa.me/6282221010828"
+                      class="text-decoration-none fw-bold text-dark"
+                      >+62 822-2101-0828</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="col-lg-6">
-            <div class="ratio ratio-4x3 shadow rounded overflow-hidden">
+          <div class="col-lg-7">
+            <div
+              class="ratio ratio-16x9 shadow rounded-3 overflow-hidden border"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2543946289!2d108.2140!3d-7.3245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMTknMjguMiJTIDEwOMKwMTInNTAuNCJF!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid"
                 style="border: 0"
@@ -330,9 +474,6 @@
                 loading="lazy"
               ></iframe>
             </div>
-            <small class="text-muted mt-2 d-block text-center"
-              >*Peta menunjukkan area Jl. HZ. Mustofa Tasikmalaya</small
-            >
           </div>
         </div>
       </div>
@@ -340,22 +481,26 @@
 
     <footer>
       <div class="container text-center">
-        <h4 class="fw-bold mb-3">Hokky Chinese Food & Seafood</h4>
-        <p class="mb-4">Kuliner kebanggaan Tasikmalaya sejak lama.</p>
+        <h4 class="fw-bold mb-3 text-white">Hokky Chinese Food & Seafood</h4>
+        <p class="mb-4 text-white-50">
+          Menyajikan kehangatan dalam setiap hidangan sejak lama.
+        </p>
         <div class="social-links mb-4">
-          <a href="#" class="text-white mx-2 fs-4"
+          <a href="#" class="btn btn-outline-light btn-sm rounded-circle mx-1"
             ><i class="bi bi-facebook"></i
           ></a>
-          <a href="#" class="text-white mx-2 fs-4"
+          <a href="#" class="btn btn-outline-light btn-sm rounded-circle mx-1"
             ><i class="bi bi-instagram"></i
           ></a>
-          <a href="https://wa.me/6282221010828" class="text-white mx-2 fs-4"
+          <a
+            href="https://wa.me/6282221010828"
+            class="btn btn-outline-light btn-sm rounded-circle mx-1"
             ><i class="bi bi-whatsapp"></i
           ></a>
         </div>
-        <hr class="border-secondary" />
-        <p class="small mb-0">
-          &copy; 2023 Hokky Chinese Food. All Rights Reserved.
+        <hr class="border-secondary w-50 mx-auto" />
+        <p class="small mb-0 text-white-50">
+          © 2025 Hokky Chinese Food Tasikmalaya. All Rights Reserved.
         </p>
       </div>
     </footer>
